@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500,600&display=swap'); */
+
+@layer base {
+  p,
+  a {
+    font-family: 'Inter', sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Rozha One', 'serif';
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  @apply bg-amcovad-secondary-300;
+  -webkit-box-shadow: 0 0 0 30px #f5f6f8 inset !important;
+}
+
+.is-sticky {
+  @apply bg-amcovad-secondary-100;
+}
+p.paragraphs::first-letter {
+  @apply text-[280%] text-amcovad-secondary-600;
+
+  font-size: 330%;
+  line-height: 2rem;
+  padding: 4px 1px;
+  margin-right: 2px;
+  float: left;
+}
+
+.scrollbar::-webkit-scrollbar {
+  @apply hidden;
+  width: 0;
+  background: transparent; /* make scrollbar transparent */
+}
+
+/* make scrollbar transparent on Firefox, IE and Edge*/
+.scrollbar {
+  @apply scroll-p-0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+input[type='checkbox'] + label:before {
+  @apply w-4 h-4 border border-amcovad-secondary-400 pb-2 pl-[2px] mr-2.5 rounded-sm;
+  content: '\2714';
+  display: inline-block;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+
+input[type='checkbox'] + label:active:before {
+  @apply scale-0;
+}
+
+input[type='checkbox']:checked + label:before {
+  @apply bg-amcovad-primary-500 border-amcovad-primary-400 text-amcovad-white h-[1.0625rem];
+}
+
+.slick-dots li button:before {
+  font-size: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+@media (min-width: 1024px) {
+  .slick-dots li button:before {
+    font-size: 12px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+body {
+  color: #000;
+}
