@@ -1,5 +1,6 @@
 import React from 'react';
 import { DatePicker } from 'rsuite';
+import PropTypes from 'prop-types';
 import { Controller, useFormContext } from 'react-hook-form';
 import { ErrorMessage } from '.';
 
@@ -27,6 +28,10 @@ const Datepicker = ({ name }) => {
       <ErrorMessage name={name} />
     </>
   );
+};
+
+Datepicker.propTypes = {
+  name: PropTypes.string.isRequired
 };
 
 export default Datepicker;
