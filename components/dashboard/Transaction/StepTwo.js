@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatePicker, Input } from '@/components/index';
+import { Datepicker, Input } from '@/components/index';
 import { Pluscon, SearchIcon } from '@/public/assets/dashboard/navBarIcon';
 
 const StepTwo = () => {
@@ -35,7 +35,7 @@ const StepTwo = () => {
         <div className="w-full lg:w-1/3">
           <div className="flex items-center gap-4">
             <div className="  flex-1">
-              <DatePicker name="fulfillDate" placeholder="Fulfill By" />
+              <Datepicker name="fulfillDate" placeholder="Fulfill By" />
             </div>
             <div className="max-w-[40px] cursor-pointer bg-secondary-200 hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
               <Pluscon />
