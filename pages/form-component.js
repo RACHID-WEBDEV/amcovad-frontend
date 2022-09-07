@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as yup from 'yup';
-import { Button, CheckboxGroup, DatePicker, Input, Textarea, Toggle, Label, Navbar } from '@/components/index';
+import { Button, CheckboxGroup, Datepicker, Input, Textarea, Toggle, Label, Navbar } from '@/components/index';
 import Select from '@/components/form/Select';
 import RadioGroup from '@/components/form/RadioGroup';
 import HookForm from '@/components/form/Form';
@@ -155,7 +155,7 @@ const SignIn = () => {
                             />
                           </div>
                           <div className="py-1">
-                            <DatePicker
+                            <Datepicker
                               name="datePicker"
                               label="Click to select your age"
                               placeholder="Pick a Date options"
