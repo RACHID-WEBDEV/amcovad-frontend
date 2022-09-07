@@ -1,11 +1,5 @@
 import * as yup from 'yup';
 
-export const WeatherSchema = yup
-  .object({
-    location: yup.string().required('Location is required').min(3, 'Mininum 3 characters')
-  })
-  .required();
-
 export const SignInSchema = yup
   .object({
     email: yup.string().email('Kindly provide a valid email address').required('Email is required'),
