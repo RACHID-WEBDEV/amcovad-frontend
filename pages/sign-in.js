@@ -37,13 +37,16 @@ const SignIn = () => {
             />
           </div>
           <div>
-            <Button className="w-full font-semibold text-amcovad-black py-2.5 px-5">Sign in</Button>
+            <Button className="w-full font-semibold text-black py-2.5 px-5">Sign in</Button>
           </div>
         </HookForm>
-        <p className="block pt-2 text-center text-base text-amcovad-secondary-700 font-normal font-Inter ">
+        {/* {errors && (
+          <p className="block pt-2 text-base font-normal text-center text-danger-500 font-Inter ">Error: {errors}</p>
+        )} */}
+        <p className="block pt-2 text-center text-base text-secondary-700 font-normal font-Inter ">
           Don’t have account?{' '}
           <Link href="/sign-up">
-            <a className=" text-amcovad-primary-400 hover:text-amcovad-primary-500">
+            <a className=" text-primary-400 hover:text-primary-500">
               <b>Sign Up</b>
             </a>
           </Link>

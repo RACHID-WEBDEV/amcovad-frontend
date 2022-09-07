@@ -11,12 +11,12 @@ import PropTypes from 'prop-types';
 
 const style = {
   container: `relative top-1/4 w-full text-left pl-16 md:pl-32 mt-8`,
-  item: `text-3xl text-amcovad-white cursor-pointer  hover:amcovad-secondary-100`,
+  item: `text-3xl text-white cursor-pointer  hover:secondary-25`,
   logo: `absolute top-8 left-8 md:left-20`,
   menu: {
     open: `h-full w-full `,
     close: `w-0 h-full`,
-    default: `overflow-x-hidden md:overflow-hidden transition-all duration-700 fixed z-10 top-0 left-0 bg-amcovad-primary-500`
+    default: `overflow-x-hidden md:overflow-hidden transition-all duration-700 fixed z-10 top-0 left-0 bg-primary-500`
   }
 };
 
@@ -57,8 +57,8 @@ const Navbar = ({ authPageOnly }) => {
   return (
     <header
       className={classNames(
-        'z-10 outline-[5px]',
-        { 'fixed lg:border-b lg:border-amcovad-primary-200 2xl:mx-auto w-full': !authPageOnly },
+        'z-50 outline-[5px]',
+        { 'fixed lg:border-b lg:border-primary-200 2xl:mx-auto w-full': !authPageOnly },
         {
           'lg:hidden w-screen': authPageOnly
         }
@@ -67,7 +67,7 @@ const Navbar = ({ authPageOnly }) => {
       <div
         className={classNames(
           'py-2 mx-auto px-4 md:max-w-full lg:px-8',
-          { 'mobile-bg lg:bg-amcovad-secondary-100 md:px-20 2xl:px-60': !authPageOnly },
+          { 'mobile-bg lg:bg-secondary-25 md:px-20 2xl:px-60': !authPageOnly },
           {
             'mobile-bg sm:max-w-xl lg:max-w-screen-xl md:px-24': authPageOnly
           }
@@ -96,14 +96,16 @@ const Navbar = ({ authPageOnly }) => {
             <li>
               <Link href="/sign-in">
                 <a>
-                  <Button outline>Sign in</Button>
+                  <Button outline className="uppercase">
+                    Sign in
+                  </Button>
                 </a>
               </Link>
             </li>
             <li>
               <Link href="/sign-up">
                 <a>
-                  <Button className="text-white ml-4 py-2.5 px-5 ">Try it now</Button>
+                  <Button className="ml-4 uppercase">Try it now</Button>
                 </a>
               </Link>
             </li>
@@ -128,7 +130,7 @@ const Navbar = ({ authPageOnly }) => {
                   </div>
                   <button
                     aria-label="Close"
-                    className="absolute top-3 right-5 text-5xl text-amcovad-white cursor-pointer "
+                    className="absolute top-3 right-5 text-5xl text-white cursor-pointer "
                     onClick={() => setIsMenuOpen()}
                   >
                     &times;

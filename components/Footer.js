@@ -9,7 +9,7 @@ import footerMenuLinks from '../data/footer';
 
 const Footer = () => {
   return (
-    <footer className="bg-amcovad-tertiary bg-cover bg-left lg:bg-top  bg-[url('../public/assets/footer/footer-hexagons.png')]">
+    <footer className="bg-tertiary bg-cover bg-left lg:bg-top  bg-[url('../public/assets/footer/footer-hexagons.png')]">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full pb-24 md:px-28 ">
         <div className="2xl:container px-2 py-4 mx-auto">
           <div className="grid gap-4 lg:gap-10  mb-8 lg:grid-cols-12">
@@ -55,7 +55,7 @@ const Footer = () => {
                     <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  lg:mb-0">
                       <Image src={Call} alt="social icon logo" />
                     </div>
-                    <h6 className="font-normal text-amcovad-secondary-300 leading-5 mt-2 lg:mt-0">
+                    <h6 className="font-normal text-secondary-300 leading-5 mt-2 lg:mt-0">
                       <Link href="tel:+23490400032453">+ 234 (0) 90400032453</Link>
                     </h6>
                   </div>
@@ -66,7 +66,7 @@ const Footer = () => {
                     <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  lg:mb-0">
                       <Image src={Mail} alt="social icon logo" />
                     </div>
-                    <h6 className="font-normal text-amcovad-secondary-300 leading-5 mt-2 lg:mt-0">
+                    <h6 className="font-normal text-secondary-300 leading-5 mt-2 lg:mt-0">
                       <Link href="mailto:contactus@amcovad.com">contactus@amcovad.com</Link>
                     </h6>
                   </div>
@@ -76,7 +76,7 @@ const Footer = () => {
                     <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  lg:mb-0">
                       <Image src={Location} alt="social icon logo" />
                     </div>
-                    <p className="font-normal text-amcovad-secondary-300 leading-5 mt-2 lg:mt-0">
+                    <p className="font-normal text-secondary-300 leading-5 mt-2 lg:mt-0">
                       3rd Floor, Central District Area, Abuja.
                     </p>
                   </div>

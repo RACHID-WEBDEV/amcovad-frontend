@@ -4,7 +4,7 @@ import testimony from '../../data/testimony';
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-amcovad-primary-600">
+    <section className="py-20 bg-primary-600">
       <div className="2xl:container  2xl:mx-auto items-center px-4 xl:px-8 md:px-32 lg:px-12">
         <div className="flex flex-wrap items-center ">
           <div className=" w-full lg:px-6 xl:px-24 lg:w-3/5 ">
@@ -13,7 +13,7 @@ const Testimonials = () => {
                 <h2 className="mb-4 text-3xl max-w-[14rem] md:max-w-[17.25rem] font-RozhaOne text-white font-bold leading-tight tracking-tight sm:text-4xl font-heading">
                   Real Story from real Amcovad.
                 </h2>
-                <p className="mb-4 font-Inter text-sm md:text-base font-normal tracking-tight text-amcovad-secondary-100 xl:mb-6">
+                <p className="mb-4 font-Inter text-sm md:text-base font-normal tracking-tight text-secondary-25 xl:mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum et accumsan nulla
                 </p>
               </div>

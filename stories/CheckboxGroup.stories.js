@@ -17,7 +17,7 @@ const defaultParameters = {
         <>
           I agree to be contacted by
           <Link href="#" passHref>
-            <a className=" text-amcovad-primary-400 hover:text-amcovad-primary-500"> amcovad</a>
+            <a className=" text-primary-400 hover:text-primary-500"> amcovad</a>
           </Link>
         </>
       ),

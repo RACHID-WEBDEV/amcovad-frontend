@@ -11,7 +11,7 @@ export default TextareaStories;
 const defaultParameters = {
   label: 'Your message',
   name: 'message',
-  className: 'bg-amcovad-secondary-200'
+  className: 'bg-secondary-100'
 };
 
 const Template = (args) => (

@@ -3,45 +3,102 @@ import { useFormContext } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { Label, ErrorMessage } from '.';
 import classNames from 'classnames';
+import FormIcons from './FormIcons';
+import { showError, showSuccess } from '@/utils/form-helpers';
 
-const Textarea = ({ className, label, labelClassName, name, placeholder }) => {
+const Textarea = ({
+  className,
+  floatLabel,
+  feedBack,
+  label,
+  leadingIcon,
+  labelClassName,
+  name,
+  placeholder,
+  rows,
+  hintIcon,
+  hintText
+}) => {
   const {
     register,
-    formState: { errors }
+    formState: { dirtyFields, errors }
   } = useFormContext();
 
   const hasErrors = !!errors?.[name];
+  const isValid = !!dirtyFields?.[name] && !hasErrors;
 
   return (
-    <div className="relative z-0 mb-4 w-full group">
-      <textarea
-        placeholder={placeholder ? placeholder : label}
-        {...register(name)}
-        className={classNames(
-          'h-32 lg:h-48 px-4 w-full text-sm  text-amcovad-secondary-700  placeholder-transparent border-2 rounded-md border-amcovad-secondary-300 appearance-none focus:outline-none focus:ring-0  peer',
-          { 'focus:border-amcovad-danger': hasErrors },
-          { 'focus:border-amcovad-primary-500': !hasErrors },
-          className
-        )}
-      />
-      <Label name={name} htmlFor={name} floatLabel text={label} floatLabelClass={labelClassName} />
+    <>
+      {label && !floatLabel && (
+        <Label feedBack="FEEDBACK.NONE" className="text-base" name={name} htmlFor={name} text={label} />
+      )}
 
+      <div className="relative z-0 mb-2 w-full group">
+        {leadingIcon && (
+          <div className="absolute top-5 left-0 flex items-center pl-3 pointer-events-none">{leadingIcon}</div>
+        )}
+        <textarea
+          rows={rows}
+          placeholder={placeholder ? placeholder : label}
+          {...register(name)}
+          className={classNames(
+            'block py-3.5 px-1 w-full text-base bg-secondary-25 border-secondary-100 border-2 rounded-md focus:outline-none focus:ring-0 peer',
+            className,
+            { 'pl-10 pr-8': leadingIcon },
+            {
+              'placeholder-transparent border-secondary-300 appearance-none bg-secondary-25 text-secondary-700 focus:ring-0 peer':
+                floatLabel
+            },
+            {
+              errorClassName: showError(hasErrors, feedBack)
+            },
+            {
+              successClassName: showSuccess(isValid, feedBack)
+            },
+            {
+              focusClassName: !hasErrors && !isValid
+            },
+            {
+              ' placeHolderClassName': placeholder
+            }
+          )}
+        ></textarea>
+
+        {floatLabel && (
+          <Label
+            name={name}
+            feedBack={feedBack}
+            htmlFor={name}
+            floatLabel
+            text={label}
+            floatLabelClass={labelClassName}
+          />
+        )}
+
+        <FormIcons hintIcon={hintIcon} feedBack={feedBack} isValid={isValid} hasErrors={hasErrors} isTextArea />
+      </div>
+
+      {hintText && <p className="pt-1 text-sm text-secondary-700">{hintText}</p>}
       <ErrorMessage name={name} />
-    </div>
+    </>
   );
 };
 Textarea.propTypes = {
   className: PropTypes.string,
+  feedBack: PropTypes.string,
   label: PropTypes.string,
   labelClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
+  rows: PropTypes.string,
   placeholder: PropTypes.string
 };
 
 Textarea.defaultProps = {
   className: null,
+  feedBack: 'FEEDBACK.ALL',
   label: null,
-  labelClassName: 'italic bg-transparent peer-focus:bg-transparent -translate-y-9 peer-focus:-translate-y-9',
+  rows: '3',
+  labelClassName: 'bg-secondary-25 peer-focus:bg-secondary-25 -translate-y-7 peer-focus:-translate-y-7',
   placeholder: null
 };
 export default Textarea;

@@ -9,7 +9,7 @@ const footer = [
   },
   {
     title: 'FAQs',
-    url: '/faq'
+    url: '/faqs'
   },
   {
     title: 'Careers',

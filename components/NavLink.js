@@ -8,7 +8,7 @@ const NavLink = ({ title, url }) => {
         <Link
           passHref
           href={url}
-          className="font-medium tracking-wide !text-amcovad-black transition-colors duration-200 font-Inter text-sm"
+          className="font-medium tracking-wide !text-black transition-colors duration-200 font-Inter text-sm"
         >
           {title}
         </Link>

@@ -16,19 +16,19 @@ export const Slide = ({ count, image, orderLast, title, text }) => {
             <div className="pt-1 lg:pt-0 lg:px-10 xl:p-0 ">
               <div className="w-full relative my-20 md:pl-10 lg:pl-0 sm:pr-5 lg:pr-0 md:pb-0">
                 <div className="px-2 max-w-[300.96px] md:max-w-[400px] lg:max-w-[387px]">
-                  <h1 className=" pb-8 lg:pb-12 text-4xl font-RozhaOne font-normal tracking-tight text-amcovad-secondary-600 sm:text-5xl md:text-4xl lg:text-5xl xl:text-[52px]">
+                  <h1 className=" pb-8 lg:pb-12 text-4xl font-RozhaOne font-normal tracking-tight text-secondary-700 sm:text-5xl md:text-4xl lg:text-5xl xl:text-[52px]">
                     <span className="block">
-                      How <span className="text-amcovad-primary-500">Amcovad </span>secure your transactions.
+                      How <span className="text-primary-500">Amcovad </span>secure your transactions.
                     </span>
                   </h1>
                 </div>
-                <p className="text-amcovad-secondary-700 z-10 pl-16 pb-4 font-Inter text-[13.6833px] md:text-sm lg:text-base font-[700] mx-auto sm:max-w-md  md:max-w-3xl">
+                <p className="text-secondary-700 z-10 pl-16 pb-4 font-Inter text-[13.6833px] md:text-sm lg:text-base font-[700] mx-auto sm:max-w-md  md:max-w-3xl">
                   {title}
                 </p>
-                <p className="max-w-[21.25rem] md:max-w-[30rem] lg:max-w-[23.6875rem] z-10 text-[13.6833px] md:text-sm lg:text-base  text-amcovad-secondary-600 font-Inter font-normal">
+                <p className="max-w-[21.25rem] md:max-w-[30rem] lg:max-w-[23.6875rem] z-10 text-[13.6833px] md:text-sm lg:text-base  text-secondary-700 font-Inter font-normal">
                   {text}
                 </p>
-                <span className="font-Inter block text-[14.875rem] md:text-[12.5rem] lg:text-[16rem] left-[-1.3125rem] md:left-[15px] lg:left-[-1.625rem] top-[3rem] md:top-[1.5rem] lg:top-20 xl:top-24 absolute font-normal text-amcovad-black opacity-10">
+                <span className="font-Inter block text-[14.875rem] md:text-[12.5rem] lg:text-[16rem] left-[-1.3125rem] md:left-[15px] lg:left-[-1.625rem] top-[3rem] md:top-[1.5rem] lg:top-20 xl:top-24 absolute font-normal text-black opacity-10">
                   {count}
                 </span>
               </div>
@@ -64,14 +64,14 @@ const HowItWork = () => {
   };
   return (
     <>
-      <section className="lg:hidden text-amcovad-secondary-300 h-[615px] md:h-[550px] lg:h-[850px] bg-amcovad-secondary-100 lg:bg-gradient-section overflow-hidden ">
+      <section className="lg:hidden text-secondary-300 h-[615px] md:h-[550px] lg:h-[850px] bg-secondary-25 lg:bg-gradient-section overflow-hidden ">
         <Slider {...slideSettingsMobile}>
           {slideData.map(({ image, text, title }, index) => {
             return <Slide key={index} count={index + 1} image={image} title={title} text={text} />;
           })}
         </Slider>
       </section>
-      <section className="hidden lg:block text-amcovad-secondary-300 h-[615px] md:h-[550px] lg:h-[850px] bg-amcovad-secondary-100 lg:bg-gradient-section overflow-hidden ">
+      <section className="hidden lg:block text-secondary-300 h-[615px] md:h-[550px] lg:h-[850px] bg-secondary-25 lg:bg-gradient-section overflow-hidden ">
         <Slider {...slideSettings}>
           {slideData.map(({ image, orderLast, title, text }, index) => {
             return (

@@ -12,14 +12,14 @@ const WelcomeArea = () => {
           <div className="flex flex-col justify-center pt-8">
             <div className="max-w-xl mb-6 pl-1 lg:px-4 xl:px-5 md:px-0">
               <div className="w-full pb-6 space-y-6 sm:max-w-md md:max-w-full  lg:max-w-lg xl:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0 lg:pl-8 xl:pl-0">
-                <h1 className="max-w-[322px] md:max-w-[450px] xl:max-w-[471px] text-4xl font-RozhaOne tracking-tight text-amcovad-primary-500  md:text-4xl lg:text-5xl xl:text-[52px]">
+                <h1 className="max-w-[322px] md:max-w-[450px] xl:max-w-[471px] text-4xl font-RozhaOne tracking-tight text-primary-500  md:text-4xl lg:text-5xl xl:text-[52px]">
                   <span className="block ">Digital approach to a secure deal & transactions</span>
                 </h1>
-                <p className="text-amcovad-tertiary font-Inter text-sm font-normal sm:max-w-md  md:max-w-[471px]">
+                <p className="text-tertiary font-Inter text-sm font-normal sm:max-w-md  md:max-w-[471px]">
                   Gallia est omnis divisa in partes tres, quarum. Fabio vel iudice vincam, sunt in culpa qui officia.
                   Salutantibus vitae elit libero, a pharetra augue.
                 </p>
-                <Button className="text-amcovad-white py-2.5 px-5">
+                <Button className="text-white py-2.5 px-5">
                   <Link href="/sign-in">
                     <a>Start now</a>
                   </Link>

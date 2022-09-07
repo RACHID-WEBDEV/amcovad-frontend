@@ -7,8 +7,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <div className="fixed z-10 w-full lg:w-4/5">
-        <nav className="bg-amcovad-secondary-200 ">
+      <div className="fixed z-40 w-full lg:w-4/5">
+        <nav className="bg-secondary-50 ">
           <div className="container px-6 pb-2 md:py-2 lg:py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-between">
@@ -25,7 +25,7 @@ const Navbar = () => {
                     <SearchIcon />
                   </div>
                   <input
-                    className="border font-Poppins text-sm font-normal  text-amcovad-secondary-500 border-amcovad-secondary-300 bg-amcovad-secondary-100 focus:outline-none focus:border-amcovad-primary-300 rounded w-full   pl-4 py-2"
+                    className="border font-Poppins text-sm font-normal  text-secondary-500 border-secondary-300 bg-secondary-25 focus:outline-none focus:border-primary-300 rounded w-full   pl-4 py-2"
                     type="text"
                     placeholder="Search"
                   />
@@ -40,7 +40,7 @@ const Navbar = () => {
                         <NotificationIcon width={24} height={24} />
                       </div>
                     </div>
-                    <div className="h-full w-10 md:w-11 flex items-center justify-center  mr-4 cursor-pointer text-amcovad-secondary-700">
+                    <div className="h-full w-10 md:w-11 flex items-center justify-center  mr-4 cursor-pointer text-secondary-700">
                       <ChatIcon />
                     </div>
                     <ManageProfile />
@@ -61,7 +61,7 @@ const Navbar = () => {
           id="mobile-nav"
         >
           <div
-            className=" bg-amcovad-secondary-100 opacity-80 fixed z-20 h-screen overflow-y-auto scrollbar w-full lg:hidden"
+            className=" bg-secondary-25 opacity-80 fixed z-20 h-screen overflow-y-auto scrollbar w-full lg:hidden"
             onClick={() => setIsMenuOpen()}
           />
           <MobileSidebar onClick={() => setIsMenuOpen()} />

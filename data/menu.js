@@ -4,12 +4,12 @@ const menu = [
     url: '/about'
   },
   {
-    title: 'Products',
-    url: '/products'
+    title: 'FAQs',
+    url: '/faqs'
   },
   {
     title: 'Pricing',
-    url: '/pricing"'
+    url: '/pricing'
   },
   {
     title: 'Contact us',

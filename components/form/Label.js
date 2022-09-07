@@ -2,27 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormContext } from 'react-hook-form';
 import classNames from 'classnames';
+import { showError, showSuccess } from '@/utils/form-helpers';
 
-export function Label({ className, floatLabel, floatLabelClass, htmlFor, name, text }) {
+export function Label({ className, checked, feedBack, floatLabel, floatLabelClass, htmlFor, name, text }) {
   const {
-    formState: { errors }
+    formState: { dirtyFields, errors }
   } = useFormContext();
 
   const hasErrors = !!errors?.[name];
+  const isValid = !!dirtyFields?.[name] && !hasErrors;
 
   return (
     <label
       htmlFor={htmlFor || name}
       className={classNames(
+        'font-Inter',
         {
-          'absolute text-sm text-amcovad-secondary-700 duration-300 transform -translate-y-7 peer-focus:-translate-y-7 p-2 scale-75 top-2 left-2 z-10 origin-[0] peer-focus:left-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 ':
+          'absolute text-sm text-secondary-700 duration-300 transform p-2 scale-75 top-2 left-2 z-10 origin-[0] peer-focus:left-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 ':
             floatLabel
         },
-        { 'cursor-pointer text-amcovad-secondary-700 font-normal font-Inter': !floatLabel },
+        { 'pointer-events-none': checked },
+        { 'block mb-2 cursor-pointer text-secondary-700 font-normal ': !floatLabel },
         { [className]: !floatLabel },
         { [floatLabelClass]: floatLabel },
-        { 'peer-focus:text-amcovad-danger': hasErrors },
-        { 'peer-focus:text-amcovad-primary-500': !hasErrors }
+        { 'text-success-600': showSuccess(isValid, feedBack) },
+        { 'text-secondary-800': !hasErrors && !isValid },
+        { 'text-danger-500': showError(hasErrors, feedBack) }
       )}
     >
       {text}
@@ -32,6 +37,7 @@ export function Label({ className, floatLabel, floatLabelClass, htmlFor, name, t
 
 Label.propTypes = {
   className: PropTypes.string,
+  feedBack: PropTypes.string,
   floatLabel: PropTypes.any,
   floatLabelClass: PropTypes.string,
   htmlFor: PropTypes.string,
@@ -41,9 +47,50 @@ Label.propTypes = {
 
 Label.defaultProps = {
   className: 'text-xs',
+  feedBack: 'FEEDBACK.ALL',
   floatLabel: null,
-  floatLabelClass: 'bg-amcovad-secondary-100 peer-focus:bg-amcovad-secondary-100',
+  floatLabelClass: 'bg-secondary-25 peer-focus:bg-secondary-25 -translate-y-7 peer-focus:-translate-y-7',
   htmlFor: null,
   name: null,
   text: null
+};
+
+export const HelperLabel = ({ checked, helperLabelClassName, htmlFor, name, text, title }) => {
+  return (
+    <div className="ml-2 pt-2 text-sm font-Inter">
+      {title && (
+        <label
+          htmlFor={htmlFor || name}
+          className={classNames(
+            'font-semibold text-secondary-800 ',
+            { 'pointer-events-none': checked },
+            helperLabelClassName
+          )}
+        >
+          {title}
+        </label>
+      )}
+      {text && (
+        <p id={htmlFor || name} className="text-xs font-normal text-secondary-600 ">
+          {text}
+        </p>
+      )}
+    </div>
+  );
+};
+
+HelperLabel.propTypes = {
+  helperLabelClassName: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  htmlFor: PropTypes.string,
+  text: PropTypes.string,
+  title: PropTypes.node
+};
+
+HelperLabel.defaultProps = {
+  helperLabelClassName: null,
+  htmlFor: null,
+  name: null,
+  text: null,
+  title: null
 };

@@ -9,7 +9,7 @@ export function ErrorMessage({ className, name }) {
   return (
     <>
       {errors?.[name] && (
-        <div className={classNames('text-amcovad-danger py-1 text-sm ', className)}>{errors?.[name]?.message}</div>
+        <div className={classNames('text-danger-500 py-1 text-sm ', className)}>{errors?.[name]?.message}</div>
       )}
     </>
   );

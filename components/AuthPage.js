@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const AuthPage = ({ children, image, imagealt, text, title }) => {
   return (
     <section className="w-full 2xl:m-auto  2xl:container">
-      <div className="lg:bg-amcovad-primary-500 overflow-y-scroll  max-w-full h-screen">
+      <div className="lg:bg-primary-500 overflow-y-scroll  max-w-full h-screen">
         <div className="bg-cover bg-[url('../public/assets/signUp/md-hexagons.png')] bg-top bg-opacity-20 lg:bg-[url('../public/assets/signUp/hexagons.png')]">
           <Navbar authPageOnly />
           <div className="flex justify-center ">
@@ -20,12 +20,12 @@ const AuthPage = ({ children, image, imagealt, text, title }) => {
                       <Image src={LogoBlack} alt="black logo" />
                     </a>
                   </Link>
-                  <div className="bg-amcovad-secondary-100  p-6 lg:p-8 ">
+                  <div className="bg-secondary-25  p-6 lg:p-8 ">
                     <div className="mb-8">
-                      <h2 className=" font-RozhaOne max-w-[300px] md:max-w-[424px] text-2xl md:text-4xl font-extrabold lg:font-bold text-amcovad-tertiary pb-2">
+                      <h2 className=" font-RozhaOne max-w-[300px] md:max-w-[424px] text-2xl md:text-4xl font-extrabold lg:font-bold text-tertiary pb-2">
                         {title}
                       </h2>
-                      <p className="text-amcovad-secondary-700 text-[14px]">{text}</p>
+                      <p className="text-secondary-700 text-[14px]">{text}</p>
                     </div>
                     {children}
                   </div>
